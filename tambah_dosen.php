@@ -1,7 +1,13 @@
 ```php
 <?php
 // Menghubungkan ke database
+$conn = null;
 include 'config/koneksi.php';
+
+// Gunakan nama koneksi yang disediakan oleh file konfigurasi.
+if ($conn === null && isset($koneksi)) {
+    $conn = $koneksi;
+}
 
 $success = '';
 $error = '';
